@@ -1,0 +1,53 @@
+<app-demo></app-demo>
+
+<!--<div class="container">
+  <div style="text-align:center">
+    <div class="container-fluid jumbotron">
+      <h1 class="display-3">
+        Basic Pagination
+      </h1>
+    </div>
+
+    <div class="container-fluid form-inline">
+      <label class="display-6">No of Items to display : </label>
+      <select (change)="selectChangeHandler($event)" class="form-control" style="width:60px">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+      </select>
+      
+
+      <div class="form-inline" style="padding-left:500px">
+        <label>Search :</label>&nbsp;
+        <input type="text" [(ngModel)]="searchText" class="form-control" />
+      </div>
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" style="background-color:darkslategray;color:white">Employee Id</th>
+          <th scope="col" style="background-color:darkslategray;color:white">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of collection.data | paginate: config | filter:searchText ;">
+          <th scope="row">{{item.id}}</th>
+          <td>{{item.value}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <pagination-controls [directionLinks]="directionLinks"
+                         [autoHide]="autoHide"
+                         [responsive]="responsive"
+                         [previousLabel]="labels.previousLabel"
+                         [nextLabel]="labels.nextLabel"
+                         [screenReaderPaginationLabel]="labels.screenReaderPaginationLabel"
+                         [screenReaderPageLabel]="labels.screenReaderPageLabel"
+                         [screenReaderCurrentLabel]="labels.screenReaderCurrentLabel"
+                         (pageChange)="pageChanged($event)"></pagination-controls>
+
+  </div>
+
+</div>-->

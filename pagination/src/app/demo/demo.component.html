@@ -1,0 +1,47 @@
+<h1 class="display-3 jumbotron container"> Custom Pagination with search</h1>
+
+
+<div class="container" style="width:800px">
+  <div class="row form-inline" style="float:left;padding-top:20px">
+    <label>Search :</label>&nbsp; &nbsp;
+    <input class="form-control" type="text" [(ngModel)]="searchText" />
+  </div>
+  <br />
+  <!--<div class="row" style="float:right">
+    <label>Display Items :</label> &nbsp;
+    <select [(ngModel)]="config.itemsPerPage">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+    </select>
+  </div>-->
+  <div class="form-inline" style="padding-left:200px">
+    <label class="control">
+      itemsPerPage :
+      <input type="number" class="form-control" min="0" [(ngModel)]="config.itemsPerPage">
+    </label>
+  </div>
+  <table class=" table">
+    <thead>
+      <tr>
+        <th class="bg-dark text-white">
+          #
+        </th>
+        <th class="bg-dark text-white">Name</th>
+        <th class="bg-dark text-white">Genre</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let game of games | filter:searchText  | paginate:config; let i=index">
+        <td>{{i}}</td>
+        <td>{{game.name}}</td>
+        <td>{{game.genre}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <pagination-controls style="text-align:center"
+                       
+                       (pageChange)="onPageChange($event)"></pagination-controls>
+</div>
+
